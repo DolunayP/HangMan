@@ -1,0 +1,114 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(96, 96, 96);
+}
+
+.header {
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    padding-top: 10px;
+    padding-bottom: 100px;
+}
+
+.container {
+    overflow: hidden;
+    width: 60%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    flex-direction: column;
+}
+
+.hangman-box {
+    width: 100%;
+    position: relative;
+}
+
+.hang-pole {
+    fill: transparent;
+    stroke: white;
+    stroke-width: 6px;
+}
+
+.searched-word {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.letter {
+    margin: 4px;
+    padding: 4px;
+    font-size: 1.6em;
+    font-weight: 600;
+    color: white;
+    border-bottom: 4px solid white;
+}
+
+.wrong-letters {
+    margin-block: 8px;
+    color: white;
+    position: absolute;
+    top: 20px;
+    right: 50px;
+}
+
+.wrong-letters p {
+    font-size: 1.4em;
+    font-weight: 400;
+    text-align: center;
+}
+
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.2);
+    background-color: gray;
+    padding: 16px;
+    margin: 2px;
+    border: 2px solid rgb(93, 93, 93);
+    border-radius: 8px;
+}
+
+.popup button {
+    background-color: rgb(23, 168, 7);
+    margin-top: 14px;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.popup button:hover {
+    background-color: rgba(14, 141, 0, 0.8);
+}
+
+.popup-warning {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    background-color: rgb(61, 61, 61);
+    padding: 24px;
+    text-align: center;
+    border-radius: 8px;
+    color: white;
+}
