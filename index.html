@@ -18,44 +18,36 @@
                 <p>Enter letters to find hidden word... </p>
             </div>
             <div class="hangman-box">
-                <svg width="250" height="250" class="hang-pole">
+                <svg width="250" height="280" class="hang-pole">
                     <line x1="47" y1="20" x2="153" y2="20" />
-                    <line x1="50" y1="20" x2="50" y2="250" />
-                    <line x1="25" y1="248" x2="75" y2="248" />
+                    <line x1="50" y1="20" x2="50" y2="280" />
+                    <line x1="25" y1="278" x2="75" y2="278" />
                     <line x1="150" y1="20" x2="150" y2="70" />
-                    <circle cx="149" cy="90" r="20" />
-                    <line x1="150" y1="110" x2="150" y2="181" />
-                    <line x1="149" y1="125" x2="185" y2="160" />
-                    <line x1="115" y1="160" x2="151" y2="125" />
-                    <line x1="149" y1="180" x2="185" y2="220" />
-                    <line x1="115" y1="220" x2="151" y2="180" />
+                    <!-- kafa -->
+                    <circle class="man" cx="149" cy="90" r="20" />
+                    <!-- gövde -->
+                    <line class="man" x1="150" y1="110" x2="150" y2="181" />
+                    <!-- kollar -->
+                    <line class="man" x1="149" y1="125" x2="185" y2="160" />
+                    <line class="man" x1="115" y1="160" x2="151" y2="125" />
+                    <!-- bacaklar -->
+                    <line class="man" x1="149" y1="180" x2="185" y2="220" />
+                    <line class="man" x1="115" y1="220" x2="151" y2="180" />
                 </svg>
 
-                <div class="wrong-letters">
-                    <h2> Wrong Letters </h2>
-                    <p>a, x, y</p>
-                </div>
-
-                <div class="searched-word">
-                    <div class="letter">a</div>
-                    <div class="letter">b</div>
-                    <div class="letter">c</div>
-                </div>
+                <div class="wrong-letters"></div>
+                <div class="searched-word"></div>
             </div>
         </div>
         <div class="popup">
-            <p>Lorem, ipsum dolor sit amet consectetur. </p>
+            <h1>Congratulations</h1>
+            <p>Congratulations you found the word...</p>
             <button> Play Again </button>
         </div>
         <div class="popup-warning">
-            <p> Lorem ipsum dolor sit amet consasda.</p>
+            <p> The letter which you are trying to add is added years ago :)</p>
         </div>
     </section>
-
-
-
-
-
     <script src="main.js"></script>
 </body>
 

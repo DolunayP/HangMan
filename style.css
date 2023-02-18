@@ -38,11 +38,14 @@ body {
     stroke-width: 6px;
 }
 
+.man {
+    visibility: hidden;
+}
+
 .searched-word {
     margin-top: 25px;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .letter {
@@ -52,6 +55,8 @@ body {
     font-weight: 600;
     color: white;
     border-bottom: 4px solid white;
+    min-width: 20px;
+    text-transform: uppercase;
 }
 
 .wrong-letters {
@@ -63,9 +68,11 @@ body {
 }
 
 .wrong-letters p {
-    font-size: 1.4em;
+    margin-top: 6px;
+    font-size: 1.2em;
     font-weight: 400;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .popup {
@@ -84,6 +91,8 @@ body {
     margin: 2px;
     border: 2px solid rgb(93, 93, 93);
     border-radius: 8px;
+    visibility: hidden;
+    text-align: center;
 }
 
 .popup button {
@@ -111,4 +120,5 @@ body {
     text-align: center;
     border-radius: 8px;
     color: white;
+    visibility: hidden;
 }
