@@ -8,7 +8,7 @@ const keyboard = document.querySelector('.keyboard');
 let correctLetters = [];
 let wrongLetters = [];
 
-// choosing random word and showing on screen
+// choosing random word and showing on the screen
 const randomWord = () => {
     const words = ['dolunay', 'magdalena', 'peeing', 'wroclaw', 'water', 'street', 'tie', 'absolute', 'beer', 'category',
         'wall', 'burger', 'sauce', 'lahmacun', 'wood', 'board', 'keyboard', 'earthquake', 'table', 'wedding', 'mouse', 'australia', 'polish', 'madagascar',
@@ -38,11 +38,11 @@ const randomWord = () => {
     return words[Math.floor(Math.random() * words.length)]
 }
 
-let selectedWord = randomWord().toLowerCase().trim();
+let selectedWord = randomWord().toLowerCase();
 
 const displayWord = () => {
     searchedWord.innerHTML = `${selectedWord.split('')
-        .map(letter => ` <div class="letter"> ${correctLetters.includes(letter) ? letter : ''} </div> `).join('')}`;
+        .map(letter => `<div class="letter"> ${correctLetters.includes(letter) ? letter : ''} </div> `).join('')}`;
 
     const w = searchedWord.innerText.replace(/\n/g, '').toLowerCase();
     if (w == selectedWord) {
@@ -55,7 +55,6 @@ const displayWrongLetters = () => {
     <p>${wrongLetters}</p>`
     displayHangman();
 }
-
 
 //keydown event
 window.addEventListener("keydown", function (e) {
@@ -114,14 +113,30 @@ popupBox.addEventListener('click', function (e) {
     }
 });
 
-//Create KeyBoard
+//Screen Keyboard
 const keyboardKeys = () => {
     const alphabet = Array.from(Array(26)).map((e, i) => i + 65).map((x) => String.fromCharCode(x));
     alphabet.forEach(key => {
-        keyboard.innerHTML += `<div class="key">${key}</div>`
+        keyboard.innerHTML += `<div class="key">${key}</div>`;
     })
 }
 
+const clickKeys = (e) => {
+    const element = e.target;
+    if (element.matches('.key')) {
+        let letter = element.textContent.toLowerCase();
+        if (selectedWord.includes(letter) && !correctLetters.includes(letter)) {
+            correctLetters.push(letter);
+            displayWord();
+        } else if (correctLetters.includes(letter) || wrongLetters.includes(letter)) {
+            displayWarningPopup();
+        } else {
+            wrongLetters.push(letter);
+            displayWrongLetters();
+        }
+    }
+}
+keyboard.addEventListener('click', clickKeys)
 keyboardKeys();
 displayWord();
 
